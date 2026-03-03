@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { AuthRoutes } from "./auth.route";
 import { arcjetProtection } from "../../middleware/arcjet.middleware";
+import { MessageRoutes } from "./message.route";
 
 export const router = Router();
 
@@ -10,6 +11,10 @@ const apiRoutes = [
   {
     path: "/auth",
     route: AuthRoutes,
+  },
+  {
+    path: "/message",
+    route: MessageRoutes,
   },
 ];
 
