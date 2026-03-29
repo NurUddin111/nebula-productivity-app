@@ -1,11 +1,11 @@
 import { Router } from "express";
 import { AuthRoutes } from "./auth.route";
-import { arcjetProtection } from "../../middleware/arcjet.middleware";
+// import { arcjetProtection } from "../../middleware/arcjet.middleware";
 import { MessageRoutes } from "./message.route";
 
 export const router = Router();
 
-router.use(arcjetProtection);
+// router.use(arcjetProtection);
 
 const apiRoutes = [
   {
