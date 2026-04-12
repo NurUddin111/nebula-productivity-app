@@ -101,6 +101,7 @@ export const logout = (req: Request, res: Response) => {
 };
 
 export const updateProfile = async (req: Request, res: Response) => {
+
   try {
     const { profilePic } = req.body;
     if (!profilePic)
@@ -122,3 +123,5 @@ export const updateProfile = async (req: Request, res: Response) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
+
+
