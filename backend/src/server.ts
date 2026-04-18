@@ -1,15 +1,12 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import { Server } from "http";
-import app from "./app";
 import { envVars } from "./app/config/env";
 import { connectDB } from "./lib/db";
+import { server } from "./lib/socket";
 
-let server: Server;
 const PORT = envVars.PORT || 1126;
 
 const startServer = async () => {
   try {
-    server = app.listen(PORT, () => {
+    server.listen(PORT, () => {
       console.log(`Nebula is listening on port 1126`);
 
       connectDB();

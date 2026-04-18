@@ -7,7 +7,6 @@ import { envVars } from "./app/config/env";
 import cors from "cors";
 
 const app = express();
-
 app.use(express.json({ limit: "5mb" }));
 app.use(cookieParser());
 app.use(

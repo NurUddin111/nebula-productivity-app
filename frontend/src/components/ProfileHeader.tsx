@@ -4,7 +4,7 @@ import { LogOutIcon, Volume2Icon, VolumeOffIcon } from "lucide-react";
 import { useChatStore } from "../store/useChatStore";
 
 const mouseClickSound = new Audio(
-  "../../public/sounds/frontend_public_sounds_mouse-click.mp3",
+  "/sounds/frontend_public_sounds_mouse-click.mp3",
 );
 
 function ProfileHeader() {
