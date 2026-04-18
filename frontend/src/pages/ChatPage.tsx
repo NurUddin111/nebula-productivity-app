@@ -1,17 +1,18 @@
 import { useChatStore } from "../store/useChatStore";
 
 import ProfileHeader from "../components/ProfileHeader";
-import BorderAnimatedContainer from "../components/BorderAnimation";
 import ActiveTabSwitch from "../components/ActiveTabSwitch";
-import NoConversationPlaceholder from "../components/NoConversationPlaceHolder";
-import ChatList from "../components/ChatList";
 import ContactList from "../components/ContactList";
+import ChatContainer from "../components/ChatContainer";
+import BorderAnimatedContainer from "../components/BorderAnimation";
+import ChatList from "../components/ChatList";
+import NoConversationPlaceholder from "../components/NoConversationPlaceHolder";
 
 function ChatPage() {
-  const { getMyChatPartners, chats, activeTab, selectedUser } = useChatStore();
+  const { activeTab, selectedUser } = useChatStore();
 
   return (
-    <div className="relative w-full max-w-6xl h-200">
+    <div className="relative w-full max-w-6xl h-[calc(100vh-2rem)]">
       <BorderAnimatedContainer>
         {/* LEFT SIDE */}
         <div className="w-80 bg-slate-800/50 backdrop-blur-sm flex flex-col">

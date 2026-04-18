@@ -13,7 +13,7 @@ const apiRoutes = [
     route: AuthRoutes,
   },
   {
-    path: "/message",
+    path: "/messages",
     route: MessageRoutes,
   },
 ];
