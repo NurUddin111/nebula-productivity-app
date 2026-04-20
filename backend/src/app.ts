@@ -1,7 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import express, { Request, Response } from "express";
 import { router } from "./app/routes";
-import path from "path";
 import cookieParser from "cookie-parser";
 import { envVars } from "./app/config/env";
 import cors from "cors";
