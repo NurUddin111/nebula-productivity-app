@@ -8,7 +8,8 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: [envVars.CLIENT_URL],
+    origin: [envVars.CLIENT_URL || "http://localhost:5173"],
+    methods: ["GET", "POST", "PUT"],
     credentials: true,
   },
 });

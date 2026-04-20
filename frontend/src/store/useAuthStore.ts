@@ -25,8 +25,7 @@ type authStore = {
   disconnectSocket: () => void;
 };
 
-const BASE_URL =
-  import.meta.env.MODE === "development" ? "http://localhost:1126" : "/";
+const BASE_URL = import.meta.env.VITE_SOCKET_URL;
 
 export const useAuthStore = create<authStore>()((set, get) => ({
   authUser: null,
