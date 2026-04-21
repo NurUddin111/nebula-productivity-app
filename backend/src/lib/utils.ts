@@ -1,8 +1,7 @@
-import { Response } from "express";
 import jwt, { JwtPayload, SignOptions } from "jsonwebtoken";
 import { envVars } from "../app/config/env";
 
-export const generateToken = (userId: JwtPayload, res: Response) => {
+export const generateToken = (userId: JwtPayload) => {
   const JWT_ACCESS_SECRET = envVars.JWT_ACCESS_SECRET;
   const JWT_ACCESS_EXPIRES = envVars.JWT_ACCESS_EXPIRES;
 
@@ -18,12 +17,13 @@ export const generateToken = (userId: JwtPayload, res: Response) => {
     expiresIn: JWT_ACCESS_EXPIRES,
   } as SignOptions);
 
-  res.cookie("jwt", token, {
-    httpOnly: true,
-    maxAge: 7 * 24 * 60 * 60 * 1000,
-    sameSite: envVars.NODE_ENV === "production" ? "none" : "lax",
-    secure: envVars.NODE_ENV === "production",
-  });
+  // res.cookie("jwt", token, {
+  //   httpOnly: true,
+  //   maxAge: 7 * 24 * 60 * 60 * 1000,
+  //   sameSite: envVars.NODE_ENV === "production" ? "none" : "lax",
+  //   secure: envVars.NODE_ENV === "production",
+  //   secure: true,
+  // });
 
   return token;
 };

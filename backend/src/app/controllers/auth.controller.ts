@@ -39,13 +39,11 @@ export const signup = async (req: Request, res: Response) => {
 
     if (newUser) {
       const savedUser = await newUser.save();
-      generateToken(savedUser._id, res);
+      const token = generateToken(savedUser._id);
 
       res.status(201).json({
-        _id: newUser._id,
-        fullName: newUser.fullName,
-        email: newUser.email,
-        profilePic: newUser.profilePic,
+        user: newUser,
+        token: token,
       });
 
       try {
@@ -81,13 +79,11 @@ export const login = async (req: Request, res: Response) => {
     if (!isPasswordCorrect)
       return res.status(400).json({ message: "Invalid credentials" });
 
-    generateToken(user._id, res);
+    const token = generateToken(user._id);
 
     res.status(200).json({
-      _id: user._id,
-      fullName: user.fullName,
-      email: user.email,
-      profilePic: user.profilePic,
+      user: user,
+      token: token,
     });
   } catch (error) {
     console.error("Error in login controller:", error);
@@ -101,7 +97,6 @@ export const logout = (req: Request, res: Response) => {
 };
 
 export const updateProfile = async (req: Request, res: Response) => {
-
   try {
     const { profilePic } = req.body;
     if (!profilePic)
@@ -123,5 +118,3 @@ export const updateProfile = async (req: Request, res: Response) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
-
-
