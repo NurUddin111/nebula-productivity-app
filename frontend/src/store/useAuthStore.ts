@@ -113,6 +113,9 @@ export const useAuthStore = create<authStore>()((set, get) => ({
 
     const socket = io(BASE_URL, {
       withCredentials: true,
+      auth: {
+        token: localStorage.getItem("token"),
+      },
     });
 
     socket.connect();
