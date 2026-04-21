@@ -26,7 +26,6 @@ io.on("connection", (socket) => {
   console.log("A user connected", socket.user.fullName);
 
   const userId = socket.userId;
-  console.log(socket.id);
 
   if (!userSocketMap[userId]) {
     userSocketMap[userId] = [];

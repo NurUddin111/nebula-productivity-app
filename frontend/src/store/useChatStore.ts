@@ -153,7 +153,7 @@ export const useChatStore = create<chatStore>()((set, get) => ({
         notificationSound.currentTime = 0;
         notificationSound
           .play()
-          .catch((e) => console.log("Audio play failed:", e));
+          .catch((e) => console.error("Audio play failed:", e));
       }
     });
   },

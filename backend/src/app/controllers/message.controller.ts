@@ -33,7 +33,7 @@ export const getMessagesByUserId = async (req: Request, res: Response) => {
 
     res.status(200).json(messages);
   } catch (error: any) {
-    console.log("Error in getMessages controller: ", error.message);
+    console.error("Error in getMessages controller: ", error.message);
     res.status(500).json({ error: "Internal server error" });
   }
 };
@@ -80,7 +80,7 @@ export const sendMessage = async (req: Request, res: Response) => {
 
     res.status(201).json(newMessage);
   } catch (error: any) {
-    console.log("Error in sendMessage controller: ", error.message);
+    console.error("Error in sendMessage controller: ", error.message);
     res.status(500).json({ error: "Internal server error" });
   }
 };

@@ -90,7 +90,7 @@ function ProfileHeader() {
               mouseClickSound.currentTime = 0; // reset to start
               mouseClickSound
                 .play()
-                .catch((error) => console.log("Audio play failed:", error));
+                .catch((error) => console.error("Audio play failed:", error));
               toggleSound();
             }}
           >

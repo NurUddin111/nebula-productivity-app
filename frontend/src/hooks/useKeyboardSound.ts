@@ -14,7 +14,7 @@ function useKeyboardSound() {
     randomSound.currentTime = 0; // this is for a better UX, def add this
     randomSound
       .play()
-      .catch((error) => console.log("Audio play failed:", error));
+      .catch((error) => console.error("Audio play failed:", error));
   };
 
   return { playRandomKeyStrokeSound };
