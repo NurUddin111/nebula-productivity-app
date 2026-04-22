@@ -218,12 +218,11 @@ Built with ❤️ using the MERN stack and Socket.io.
 
 ---
 
-## 👨‍💻 Author
+👨‍💻 Author
 
-Muhammad Nur Uddin
+    Muhammad Nur Uddin
 
-“Code.Learn.Repeat.”
-📧 nuruddinmuhammad38@gmail.com
-🌐 https://github.com/NurUddin111
-
----
+    “Code.Learn.Repeat.”
+    📧 nuruddinmuhammad38@gmail.com
+    🌐 https://github.com/NurUddin111
+    ```
