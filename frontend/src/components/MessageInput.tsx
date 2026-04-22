@@ -82,7 +82,7 @@ function MessageInput() {
             setText(e.target.value);
             if (isSoundEnabled) playRandomKeyStrokeSound();
           }}
-          className="flex-1 min-w-0 bg-slate-800/50 border border-slate-700/50 rounded-lg py-2 px-3 md:px-4 text-sm md:text-base"
+          className="flex-1 min-w-0 bg-slate-800/50 border border-slate-700/50 rounded-lg py-2 px-3 md:px-4 text-sm md:text-base text-slate-200 placeholder:text-slate-400"
           placeholder="Type your message..."
         />
 
