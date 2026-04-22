@@ -8,7 +8,7 @@ A full-stack real-time chat application built with React, Node.js, and Socket.io
 
 | Service | URL |
 |---|---|
-| **Frontend** | [nebula-productivity-app.vercel.app](https://nebula-productivity-app.vercel.app) |
+| **Frontend** | [nebula-productivity-app.vercel.app](https://nebula-productivity-app.vercel.app/) |
 | **Backend** | [nebula-productivity-app-production.up.railway.app](https://nebula-productivity-app-production.up.railway.app) |
 
 ---
@@ -52,23 +52,26 @@ A full-stack real-time chat application built with React, Node.js, and Socket.io
 
 ```
 nebula/
-├── frontend/               # React + Vite app (deployed on Vercel)
+├── frontend/               
 │   ├── src/
-│   │   ├── app/            # App entry, routing
-│   │   ├── components/     # Reusable UI components
-│   │   ├── pages/          # Route pages
-│   │   ├── store/          # Zustand stores
-│   │   └── lib/            # Axios instance, helpers
+│   │   ├── components/           
+│   │   ├── hooks/     
+│   │   ├── lib/         
+│   │   ├── pages/         
+│   │   ├── store/         
+│   │   └── App.tsx            
 │   └── .env
 │
-├── backend/                # Express + Socket.io server (deployed on Railway)
+├── backend/                
 │   ├── src/
 │   │   ├── app/
-│   │   │   ├── config/     # Env vars, DB connection
-│   │   │   ├── modules/    # Feature modules (auth, chat, user)
-│   │   │   └── routes/     # API routes
-│   │   ├── socket.ts       # Socket.io server logic
-│   │   └── index.ts        # Server entry point
+│   │   │   ├── config/    
+│   │   │   ├── modules/    
+│   │   │   └── routes/     
+│   │   ├── lib/       
+│   │   ├── middleware/       
+│   │   ├── app.ts       
+│   │   └── server.ts        
 │   └── .env
 ```
 
@@ -88,7 +91,7 @@ nebula/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/nebula.git
+git clone https://github.com/NurUddin111/nebula-productivity-app.git
 cd nebula
 ```
 
@@ -104,19 +107,8 @@ npm install
 Create a `.env` file in the `backend/` folder:
 
 ```env
-PORT=1126
-NODE_ENV=development
-
-MONGO_URI=your_mongodb_connection_string
-
-JWT_ACCESS_SECRET=your_jwt_secret
-JWT_ACCESS_EXPIRES=7d
-
-CLIENT_URL=http://localhost:5173
-
-CLOUDINARY_CLOUD_NAME=your_cloud_name
-CLOUDINARY_API_KEY=your_api_key
-CLOUDINARY_API_SECRET=your_api_secret
+cp .env.example .env
+# (Add your environment variables)
 ```
 
 Start the backend:
@@ -163,18 +155,25 @@ The app is deployed across two platforms:
 
 **Vercel (Frontend):**
 ```
-VITE_API_URL=https://your-backend.up.railway.app
+VITE_API_URL=https://nebula-productivity-app-production.up.railway.app
 ```
 
 **Railway (Backend):**
 ```
+PORT=1126
 NODE_ENV=production
-CLIENT_URL=https://your-app.vercel.app
 MONGO_URI=...
 JWT_ACCESS_SECRET=...
+JWT_ACCESS_EXPIRES=...
+RESEND_API_KEY=...
+EMAIL_FROM=...
+EMAIL_FROM_NAME=...
+CLIENT_URL=https://nebula-productivity-app.vercel.app
 CLOUDINARY_CLOUD_NAME=...
 CLOUDINARY_API_KEY=...
 CLOUDINARY_API_SECRET=...
+ARCJET_KEY=...
+ARCJET_ENV=...
 ```
 
 > Vercel serves the SPA with a `vercel.json` rewrite rule to support client-side routing.
@@ -186,21 +185,19 @@ CLOUDINARY_API_SECRET=...
 ### Auth
 | Method | Endpoint | Description |
 |---|---|---|
-| `POST` | `/api/v1/auth/register` | Register a new user |
+| `POST` | `/api/v1/auth/signup` | Register a new user |
 | `POST` | `/api/v1/auth/login` | Login and receive JWT |
 | `POST` | `/api/v1/auth/logout` | Logout |
+| `POST` | `/api/v1/auth/update-profile` | Update user profile |
 | `GET` | `/api/v1/auth/check` | Verify auth token |
 
 ### Messages
 | Method | Endpoint | Description |
 |---|---|---|
-| `GET` | `/api/v1/messages/:userId` | Get conversation with a user |
-| `POST` | `/api/v1/messages/send/:userId` | Send a message |
-
-### Users
-| Method | Endpoint | Description |
-|---|---|---|
-| `GET` | `/api/v1/users` | Get all users for sidebar |
+| `GET` | `/api/v1/messages/contacts` | Get all users for sidebar |
+| `GET` | `/api/v1/messages/chats` | Get all chat partners |
+| `GET` | `/api/v1/messages/:id` | Get conversation with a user |
+| `POST` | `/api/v1/messages/send/:id` | Send a message |
 
 ---
 
@@ -215,12 +212,16 @@ Nebula uses **Bearer token authentication** for cross-domain compatibility:
 
 ---
 
-## 📄 License
-
-MIT License. See [LICENSE](./LICENSE) for details.
-
----
-
 ## 🙌 Acknowledgements
 
 Built with ❤️ using the MERN stack and Socket.io.
+
+---
+
+## 👨‍💻 Author
+
+Muhammad Nur Uddin
+
+“Code.Learn.Repeat.”
+📧 nuruddinmuhammad38@gmail.com
+🌐 https://github.com/NurUddin111
