@@ -64,7 +64,7 @@ const ChatContainer = () => {
                 }`}
               >
                 <div
-                  className={`chat-bubble max-w-[75%] break-words text-sm md:text-base ${
+                  className={`chat-bubble max-w-[75%] wrap-break-word text-sm md:text-base ${
                     msg.senderId === authUser._id
                       ? "bg-cyan-600 text-white"
                       : "bg-slate-800 text-slate-200"
