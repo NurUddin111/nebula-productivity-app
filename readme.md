@@ -16,6 +16,23 @@ A full-stack real-time chat application built with React, Node.js, and Socket.io
 
 ---
 
+## 📸 Application Preview
+
+<table>
+  <tr>
+    <td align="center">
+      <strong>Sign Up</strong><br/><br/>
+      <img width="1916" height="992" alt="Screenshot 2026-03-29 120147" src="https://github.com/user-attachments/assets/81a1f204-776e-473f-91e8-eaffd82fa26c" />
+    </td>
+    <td align="center">
+      <strong>Chat</strong><br/><br/>
+      <img width="1565" height="921" alt="Screenshot 2026-04-22 022840" src="https://github.com/user-attachments/assets/1e5a7eec-1f68-4c14-951e-606dfe8a89e9" />
+    </td>
+  </tr>
+</table>
+
+---
+
 ## 🚀 Live Demo
 
 | Service | URL |
