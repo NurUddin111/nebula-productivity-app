@@ -20,6 +20,11 @@ app.get("/", (req: Request, res: Response) => {
   });
 });
 
+app.get("/health", (req, res) => {
+  res.status(200).json({ status: "ok" });
+  console.log("Ping...");
+});
+
 app.use("/api/v1", router);
 
 export default app;
