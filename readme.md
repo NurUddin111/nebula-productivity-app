@@ -38,7 +38,7 @@ A full-stack real-time chat application built with React, Node.js, and Socket.io
 | Service | URL |
 |---|---|
 | **Frontend** | [nebula-productivity-app.vercel.app](https://nebula-productivity-app.vercel.app/) |
-| **Backend** | [nebula-productivity-app-production.up.railway.app](https://nebula-productivity-app-production.up.railway.app) |
+| **Backend** | [nebula-productivity-app-production.up.railway.app](https://nebula-productivity-app-backend.onrender.com) |
 
 ---
 
